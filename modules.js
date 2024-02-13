@@ -101,7 +101,7 @@ function apiErrorMsg(printToCSS) {
     const textNode = document.createTextNode("Seems to be a problem, please try again later");
     noHit.classList.add("nochallange")
     noHit.appendChild(textNode);
-    printSection.appendChild(noHit)
+    // printSection.appendChild(noHit)
 }
 
 

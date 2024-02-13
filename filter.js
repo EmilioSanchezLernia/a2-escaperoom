@@ -14,7 +14,7 @@ getApi()
     .then(grabAllTags)
     .catch(err => {
         console.log('errors: ' + err.message)
-        apiErrorMsg('#testbox')
+        // apiErrorMsg('#testbox')
     })
     .then(loadingBar)
 
