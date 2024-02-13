@@ -44,12 +44,13 @@ function onsiteLink(){
 }
 onsiteLink();
 
-function seeAllChallengeLink(){
-  document.querySelector("#seeAll").addEventListener('click', () => window.location.replace('./filter.htm'))
-}
-seeAllChallengeLink();
+// function seeAllChallengeLink(){
+//   document.querySelector("#seeAll").addEventListener('click', () => window.location.replace('./filter.htm'))
+// }
+// seeAllChallengeLink(); 
 
-async function topThree() {
+try {
+  async function topThree() {
   const url = 'https://lernia-sjj-assignments.vercel.app/api/challenges';
   const response = await fetch(url);
   const data = await response.json();
@@ -65,4 +66,9 @@ topThree()
 .catch(err => {
   apiErrorMsg('.main__slider')}
   );
+} catch (error) {
+  console.error(error);
+}
+
+
 

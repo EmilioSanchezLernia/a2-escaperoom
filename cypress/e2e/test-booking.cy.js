@@ -1,13 +1,20 @@
 describe('Test booking', () => {
 
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = (today.getMonth() + 1).toString().padStart(2, '0');
+  const day = today.getDate().toString().padStart(2, '0');
+ 
+  const formattedDate = `${year}-${month}-${day}`;
+
   it('clicking first "button" and later submit form', () => {
-    cy.visit('http://127.0.0.1:5501/index.html')
+    cy.visit('https://emiliosanchezlernia.github.io/a2-escaperoom/')
     cy.contains('Take challenge').click({ multiple: true })
 
     //step 1
     cy.get('[data-cy="booking-date"]')
-      .type('2023-12-10')
-      .and('have.value', '2023-12-10')
+      .type(`${formattedDate}`)
+      .and('have.value', `${formattedDate}`)
       .should('have.attr', 'required')
 
     cy.contains('Search').click()
